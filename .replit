@@ -1,4 +1,20 @@
-run = "cowsay Configure me!"
+#run = "cowsay Configure me!"
+
+entrypoint = "run.py"
+language = "python3"
+
+[languages.python3]
+patterns = "**/*.py"
+
+[languages.python3.languageServer]
+start = ["pyls"]
+
+[env]
+VIRTUAL_ENV = "$HOME/$REPL_SLUG/venv"
+PROJECT_NAME = "glizzness"
+PROJECT_PATH = "$HOME/$REPL_SLUG/$PROJECT_NAME"
+PATH = "$VIRTUAL_ENV/bin"
+PYTHONPATH = "$VIRTUAL_ENV/lib/python3.9/site-packages"
 
 [nix]
 channel = "stable-22_11"
